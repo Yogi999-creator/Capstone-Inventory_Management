@@ -17,10 +17,13 @@ class UserAddShowView(TemplateView):
     def post(self, request):
          fm = ItemsRegistration(request.POST)
          if fm.is_valid():
+            ch = fm.cleaned_data['choose'] 
             nm = fm.cleaned_data['name']
             em = fm.cleaned_data['email']
+            ad = fm.cleaned_data['address']
             pw = fm.cleaned_data['password']
-            reg = User(name=nm, email=em, password=pw)
+            pr = fm.cleaned_data['products']
+            reg = User(choose=ch, name=nm, email=em, address=ad ,password=pw, products=pr )
             reg.save()
          return HttpResponseRedirect('/')
 
