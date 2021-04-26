@@ -22,8 +22,10 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Address</th>
-                    <th scope="col">Password</th>
                     <th scope="col">Products</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Packaging</th>
+
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -35,8 +37,9 @@
                     <td>{{it.name}}</td>
                     <td>{{it.email}}</td>
                     <td>{{it.address}}</td>
-                    <td>{{it.password}}</td>
                     <td>{{it.products}}</td>
+                    <td>{{it.quantity}}</td>
+                    <td>{{it.packaging}}</td>
 
                     <td>
                         <a href="{% url 'updatedata' it.id %}" class="btn btn-warning btn-sm">Edit</a>

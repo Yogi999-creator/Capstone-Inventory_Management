@@ -16,6 +16,8 @@ class User(models.Model):
     name = models.CharField(max_length=70)
     email = models.EmailField(max_length=100)
     address = models.CharField(max_length=1000)
-    password = models.CharField(max_length=100)
-    products = models.CharField(max_length=15, choices=products, null=True)
+    products = models.CharField(max_length=15, choices=products, null=True, default="Pen")
+    quantity = models.IntegerField()
+    packaging = models.BooleanField()
+   
    
