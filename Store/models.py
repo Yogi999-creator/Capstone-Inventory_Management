@@ -20,4 +20,5 @@ class User(models.Model):
     quantity = models.IntegerField()
     packaging = models.BooleanField()
     date = models.DateField(default="2021-04-27")
+    images = models.ImageField(upload_to='images/',default="")
    

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-sm-2">
         <h4 class="text-center alert alert-info">Add Data</h4>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %} {{form.as_p}}
             <input type="submit" class="btn btn-success" value="Add">
         </form>
@@ -26,6 +26,7 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Packaging</th>
                     <th scope="col">Delivery_Date</th>
+                    <th scope="col">Product_Image</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -39,8 +40,14 @@
                     <td>{{it.address}}</td>
                     <td>{{it.products}}</td>
                     <td>{{it.quantity}}</td>
-                    <td>{{it.packaging}}</td>
+                    <!--  <td>{{it.packaging}}</td> -->
+                    <td>{% if it.packaging == True %}
+                        <a>Yes</a> {% else %}
+                        <a>No</a> {% endif %}
+                    </td>
                     <td>{{it.date}}</td>
+                    <td> <img src="{{it.images.url}}" alt="" style="height: 120px; width: 100px;"></td>
+
 
                     <td>
                         <a href="{% url 'updatedata' it.id %}" class="btn btn-warning btn-sm">Edit</a>

@@ -15,7 +15,7 @@ class UserAddShowView(TemplateView):
         context = {'ite':item, 'form':fm}
         return context
     def post(self, request):
-         fm = ItemsRegistration(request.POST)
+         fm = ItemsRegistration(request.POST, request.FILES)
          if fm.is_valid():
             ch = fm.cleaned_data['choose'] 
             nm = fm.cleaned_data['name']
@@ -25,8 +25,9 @@ class UserAddShowView(TemplateView):
             qq = fm.cleaned_data['quantity']
             pk = fm.cleaned_data['packaging']
             dt = fm.cleaned_data['date']
+            im = fm.cleaned_data['images']
            
-            reg = User(choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk, date=dt)
+            reg = User(choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk, date=dt, images=im)
             reg.save()
          return HttpResponseRedirect('/')
 
@@ -39,7 +40,7 @@ class UserUpdateView(View):
     
     def post(self, request, id):
         pi = User.objects.get(pk=id)
-        fm = ItemsRegistration(request.POST, instance=pi)
+        fm = ItemsRegistration(request.POST, request.FILES ,instance=pi)
         if fm.is_valid():
            fm.save()
         return HttpResponseRedirect('/')
