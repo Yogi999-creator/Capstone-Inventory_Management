@@ -24,8 +24,9 @@ class UserAddShowView(TemplateView):
             pr = fm.cleaned_data['products']
             qq = fm.cleaned_data['quantity']
             pk = fm.cleaned_data['packaging']
+            dt = fm.cleaned_data['date']
            
-            reg = User(choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk)
+            reg = User(choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk, date=dt)
             reg.save()
          return HttpResponseRedirect('/')
 

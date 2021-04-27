@@ -25,7 +25,7 @@
                     <th scope="col">Products</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Packaging</th>
-
+                    <th scope="col">Delivery_Date</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -40,6 +40,7 @@
                     <td>{{it.products}}</td>
                     <td>{{it.quantity}}</td>
                     <td>{{it.packaging}}</td>
+                    <td>{{it.date}}</td>
 
                     <td>
                         <a href="{% url 'updatedata' it.id %}" class="btn btn-warning btn-sm">Edit</a>

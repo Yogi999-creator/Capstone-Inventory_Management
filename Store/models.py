@@ -19,5 +19,5 @@ class User(models.Model):
     products = models.CharField(max_length=15, choices=products, null=True, default="Pen")
     quantity = models.IntegerField()
     packaging = models.BooleanField()
-   
+    date = models.DateField(default="2021-04-27")
    
