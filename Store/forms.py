@@ -5,8 +5,9 @@ from .models import User
 class ItemsRegistration(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['choose','name', 'email', 'address', 'products', 'quantity', 'packaging', 'date', 'images' ]
+        fields = ['sr_number','choose','name', 'email', 'address', 'products', 'quantity', 'packaging', 'date', 'images' ]
         widgets = {
+            'sr_number':forms.TextInput(attrs={'class':'form-control'}),
             'choose':forms.RadioSelect(),
             'name':forms.TextInput(attrs={'class':'form-control'}),
             'email':forms.EmailInput(attrs={'class':'form-control'}),

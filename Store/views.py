@@ -17,6 +17,7 @@ class UserAddShowView(TemplateView):
     def post(self, request):
          fm = ItemsRegistration(request.POST, request.FILES)
          if fm.is_valid():
+            sn = fm.cleaned_data['sr_number']
             ch = fm.cleaned_data['choose'] 
             nm = fm.cleaned_data['name']
             em = fm.cleaned_data['email']
@@ -27,7 +28,7 @@ class UserAddShowView(TemplateView):
             dt = fm.cleaned_data['date']
             im = fm.cleaned_data['images']
            
-            reg = User(choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk, date=dt, images=im)
+            reg = User(sr_number=sn ,choose=ch, name=nm, email=em, address=ad , products=pr, quantity=qq, packaging=pk, date=dt, images=im)
             reg.save()
          return HttpResponseRedirect('/')
 
