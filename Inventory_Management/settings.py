@@ -25,7 +25,7 @@ SECRET_KEY = '!p6)qvd!_ero37sg_$m^!v*202-ompl#%36n(kmoy&ubc9_lqm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','inventory-management-yogesh.herokuapp.com']
 
 
 # Application definition
