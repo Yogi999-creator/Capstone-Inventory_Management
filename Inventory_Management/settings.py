@@ -25,7 +25,7 @@ SECRET_KEY = '!p6)qvd!_ero37sg_$m^!v*202-ompl#%36n(kmoy&ubc9_lqm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','yogesh-inventory.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'yogesh-inventory-management.herokuapp.com']
 
 
 # Application definition
@@ -131,11 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATIC_URL = '/media/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'media'),
-)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
